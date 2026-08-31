@@ -11,6 +11,16 @@ public class GameManager : MonoBehaviour
         totalCoin = GameObject.FindGameObjectsWithTag("Coin").Length;
     }
 
+    void OnEnable()
+    {
+        Enemy.OnZombieMati += ZombieMati;
+    }
+
+    void OnDisable()
+    {
+        Enemy.OnZombieMati -= ZombieMati;
+    }
+
     // Update is called once per frame
     public void AmbilKoin()
     {
@@ -25,6 +35,11 @@ public class GameManager : MonoBehaviour
     void Menang()
     {
         Debug.Log("KAMU MENANG");
+    }
+
+    void ZombieMati(Enemy enemy)
+    {
+        Debug.Log("GameManager menerima event: " + enemy.gameObject.name + " mati!");
     }
 }
 

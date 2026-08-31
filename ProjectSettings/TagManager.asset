@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - Coin
+  - PatrolA
+  - PatrolB
+  - Undifined
   layers:
   - Default
   - TransparentFX
