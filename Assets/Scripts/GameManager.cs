@@ -41,5 +41,10 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("GameManager menerima event: " + enemy.gameObject.name + " mati!");
     }
+
+    public void TampilkanPesanZombieMati()
+    {
+        Debug.Log("GameManager menerima event: Zombie mati!");
+    }
 }
 

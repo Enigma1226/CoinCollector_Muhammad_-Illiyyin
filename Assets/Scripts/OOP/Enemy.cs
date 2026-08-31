@@ -1,9 +1,11 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Enemy : MonoBehaviour, IDamageable
 {
     public static event Action<Enemy> OnZombieMati;
+    [SerializeField] private UnityEvent onZombieMati;
     [SerializeField] private int hp = 100;
     public float ms = 2f;
     protected Transform player;
@@ -149,6 +151,7 @@ public class Enemy : MonoBehaviour, IDamageable
     {
         Debug.Log($"{gameObject.name} mati!");
         OnZombieMati?.Invoke(this);
+        onZombieMati?.Invoke();
         Destroy(gameObject);
     }
 
