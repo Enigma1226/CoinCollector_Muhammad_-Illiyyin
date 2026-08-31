@@ -6,13 +6,14 @@ public class Enemy : MonoBehaviour, IDamageable
 {
     public static event Action<Enemy> OnZombieMati;
     [SerializeField] private UnityEvent onZombieMati;
-    [SerializeField] private int hp = 100;
-    public float ms = 2f;
+    [SerializeField] private ZombieConfig config;
+    private int hp;
+    public float ms;
     protected Transform player;
 
     [Header("Pengaturan State Machine")]
-    [SerializeField] private float jarakDeteksi = 6f;
-    [SerializeField] private float jarakSerang = 1.5f;
+    private float jarakDeteksi;
+    private float jarakSerang;
     [SerializeField] private float jedaSerang = 1f;
 
     [Header("Pengaturan Patrol A → B")]
@@ -26,6 +27,21 @@ public class Enemy : MonoBehaviour, IDamageable
 
     // Patrol
     private Transform targetPatrol;
+
+    void Awake()
+    {
+        if (config != null)
+        {
+            hp = config.hp;
+            ms = config.kecepatan;
+            jarakDeteksi = config.jarakDeteksi;
+            jarakSerang = config.jarakSerang;
+        }
+        else
+        {
+            Debug.LogWarning("Config Zombie belum di-assign!");
+        }
+    }
 
     protected virtual void Start()
     {
