@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c014bbbc77c89e46abf35fc334a0632, type: 3}
   m_Name: ZombieConfig
   m_EditorClassIdentifier: 
-  hp: 100
-  kecepatan: 2
-  jarakDeteksi: 6
-  jarakSerang: 1.2
+  hp: 200
+  kecepatan: 4
+  jarakDeteksi: 10
+  jarakSerang: 2

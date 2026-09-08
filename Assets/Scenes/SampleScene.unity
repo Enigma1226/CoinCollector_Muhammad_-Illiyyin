@@ -1342,7 +1342,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  config: {fileID: 0}
+  config: {fileID: 11400000, guid: 94a6fc30db3f5f14099c7c7e13088289, type: 2}
   ms: 2
   jedaSerang: 1
   titikA: {fileID: 158802135}
